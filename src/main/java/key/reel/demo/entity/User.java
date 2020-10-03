@@ -2,20 +2,25 @@ package key.reel.demo.entity;
 
 public class User {
 
-    private int id;
+    private String login;
     private String name;
+    private String password;
 
-    public User(int id, String name) {
-        this.id = id;
+    public User(String login, String name, String password) {
+        this.login = login;
         this.name = name;
+        this.password = password;
+    }
+    public User(String login) {
+        this.login = login;
     }
 
-    public int getId() {
-        return id;
+    public String getPassword() {
+        return password;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getName() {
@@ -25,4 +30,13 @@ public class User {
     public void setName(String name) {
         this.name = name;
     }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
 }
