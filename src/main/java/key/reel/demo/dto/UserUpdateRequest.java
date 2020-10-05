@@ -4,15 +4,14 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 import javax.validation.Valid;
-import javax.validation.constraints.*;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Pattern;
+import javax.validation.constraints.Size;
 import java.util.List;
 
-public class UserCreateRequests {
+public class UserUpdateRequest {
 
-    @JsonProperty("login")
-    @NotBlank(message = "empty login")
-    @Size(min = 5, message = "short login")
-    public final String login;
+
     @JsonProperty("name")
     @NotBlank(message = "empty name")
     @Size(min = 5, message = "short name")
@@ -31,11 +30,7 @@ public class UserCreateRequests {
     public final List<Integer> roles;
 
     @JsonCreator
-    public UserCreateRequests(
-            @JsonProperty("login")
-            @NotBlank(message = "empty login") @Size(
-                    min = 5,
-                    message = "short login") String login,
+    public UserUpdateRequest(
             @JsonProperty("name")
             @NotBlank(message = "empty name") @Size(
                     min = 5,
@@ -49,7 +44,6 @@ public class UserCreateRequests {
                     regexp = ".*[0-9].*",
                     message = "в пароле должна быть хотя бы одна цифра") String password,
             List<Integer> roles) {
-        this.login = login;
         this.name = name;
         this.password = password;
         this.roles = roles;

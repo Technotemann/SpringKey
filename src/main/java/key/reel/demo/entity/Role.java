@@ -14,9 +14,11 @@ public class Role {
 
     public Role() {
     }
+
     public Role(String role) {
         this.role = role;
     }
+
     public Role(int id, String role) {
         this.id = id;
         this.role = role;
